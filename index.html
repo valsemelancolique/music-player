@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Music Player</title>
+<style>
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f7f7f7;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+.player{
+  background:#fff;
+  padding:24px;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,.12);
+  text-align:center;
+  max-width:400px;
+  width:90%;
+}
+.player h2{margin-bottom:16px;color:#111;}
+.player img{width:160px;border-radius:14px;margin-bottom:16px;}
+.player audio{width:100%;margin-bottom:16px;}
+.player button{
+  padding:10px 16px;
+  margin:4px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:16px;
+}
+.play{background:#000;color:#fff;}
+.pause{background:#ddd;color:#000;}
+.restart{background:#f3f3f3;color:#000;}
+</style>
+</head>
+<body>
+
+<div class="player">
+  <h2>Gothic Track</h2>
+  <img src="https://i.imgur.com/8Km9tLL.png" alt="Cover">
+  <audio id="audio" preload="auto">
+    <source src="https://drive.google.com/uc?export=download&id=1WRsf7JC8fm8Hsp4U97MH0_FEtJ1PRLUU&confirm=t" type="audio/mpeg">
+    Ваш браузер не поддерживает audio.
+  </audio>
+  <div>
+    <button class="play" onclick="audio.play()">▶ Play</button>
+    <button class="pause" onclick="audio.pause()">❚❚ Pause</button>
+    <button class="restart" onclick="audio.currentTime=0">↺ Restart</button>
+  </div>
+</div>
+
+<script>
+const audio = document.getElementById('audio');
+</script>
+
+</body>
+</html>
